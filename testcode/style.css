@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/*
+	스타일 주석
+	
+*/
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.mainHeader {
+  min-width: 1400px;
+}
+.mainHeader > ul {
+  overflow: auto;
+}
+
+.topMenu {
+  margin: auto;
+  background-color: blue;
+  text-align: center;
+}
+.topMenu li {
+  float: left;
+  width: 10%;
+  height: 80px;
+  line-height: 80px;
+  background-color: white;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2em;
+}
+.topMenu li:first-child {
+  font-size: 4em;
+  font-weight: 900;
+  /* font-family: "바탕체"; */
+  font-family: "Nanum Pen Script", cursive;
+}
+.topMenu li:nth-child(n + 9) {
+  font-size: 1.5em;
+}
+
+.topMenu a:link,
+.topMenu a:visited,
+.topMenu a:active {
+  text-decoration: none;
+  color: black;
+}
+.topMenu a:hover {
+  color: rgba(131, 125, 125, 0.952);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  /* 높이를 지정하지 않도록 한다. */
+  padding: 20xp 0;
+  color: white;
+  background: blue;
+  text-align: center;
+}
+
+/* 회원가입 & 로그인 모달창 관련 */
+#joinModal {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#joinModal h2 {
+  margin: 0;
+}
+#joinModal button {
+  display: inline-block;
+  width: 100px;
+  margin-left: calc(100% - 100px - 10px);
+}
+
+#joinModal .joinModal_content {
+  width: 500px;
+  margin: 100px auto;
+  padding: 20px 10px;
+  background: #fff;
+  border: 2px solid #666;
+}
+
+#joinModal .joinModal_layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.jointextarea {
+  height: 50px;
+  border: 1px solid #dfe0df;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: auto;
+  background: #fff;
+  /* color: #000; */
+}
