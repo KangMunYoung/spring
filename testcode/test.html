@@ -25,7 +25,7 @@
           <li><a href="#">베스트</a></li>
           <li><a href="#">인증</a></li>
           <!-- <c:if test="${logStatus != 'Y' }"> -->
-          <li><a href="#" class="login">로그인 </a></li>
+          <li><a href="#" class="loginBtn" id="loginBtn">로그인 </a></li>
           <li><a href="#" class="joinBtn" id="joinBtn">회원가입</a></li>
           <!-- </c:if> -->
           <!-- <c:if test="${logStatus == 'Y' }">
@@ -236,9 +236,9 @@
               <p>-생년월일: 만14세미만은 가입이 제한되며, 가입시 확인하여 탈퇴처리합니다.</p>
             </div>
             <!-- 아이디 입력시 서버에서 바로바로 확인하여 아래 중복확인내용 출력 예정 -->
-            <div><input class="joinTextBox" type="text" name="userid" id="userid" placeholder="아이디" /></div>
-            <div><input class="joinTextBox" type="password" name="userpwd" id="userpwd" placeholder="비밀번호" /></div>
-            <div><input class="joinTextBox" type="password" name="userpwdChk" id="userpwdChk" placeholder="비밀번호확인" /></div>
+            <div><input class="joinTextBox" type="text" name="joinUserid" id="joinUserid" placeholder="아이디" /></div>
+            <div><input class="joinTextBox" type="password" name="joinUserpwd" id="joinUserpwd" placeholder="비밀번호" /></div>
+            <div><input class="joinTextBox" type="password" name="joinUserpwdChk" id="joinUserpwdChk" placeholder="비밀번호확인" /></div>
 
             <!-- 이메일 입력시 서버에서 바로바로 확인하여 아래 중복확인내용 출력 예정 -->
             <div>
@@ -276,7 +276,27 @@
             <input type="submit" value="회원가입" class="btnBlock joinSubmitBtn" />
           </form>
         </article>
-        <div class="joinModal_layer"></div>
+        <!-- 로그인 모달창... -->
+      </div>
+
+      <div class="loginModal" id="loginModal">
+        <div class="modalOverlay"></div>
+        <article class="loginForm">
+          <form method="post" action="" id="logFrm">
+            <h2>로그인</h2>
+            <input type="text" class="userid" name="userid" id="userid" placeholder="아이디" /><br />
+            <input type="password" class="userpwd" name="userpwd" id="userpwd" placeholder="비밀번호" /><br />
+            <label class="autoLoginLabel">
+              <input type="checkbox" name="autoLogin" id="autoLogin" class="autoLogin" />
+              <span>로그인상태유지</span>
+            </label>
+            <input type="submit" value="로그인" />
+            <div class="loginBottumBtn">
+              <a href="" class="joinBtn2">회원가입</a>
+              <a href="" class="findId">아이디&비밀번호 찾기</a>
+            </div>
+          </form>
+        </article>
       </div>
 
       <!-- footer -->

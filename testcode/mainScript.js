@@ -34,8 +34,12 @@
 
 //제이쿼리... 으으으으음......
 
-// 회원가입 버튼 클릭
+//로그인 버튼 클릭
+$('#loginBtn').click(function () {
+  $('.loginModal').css('display', 'block');
+});
 
+// 회원가입 버튼 클릭
 $('#joinBtn').click(function () {
   $('.loginJoinModal').css('display', 'block');
 
@@ -50,6 +54,9 @@ $('.modalOverlay').click(function () {
   $('.loginJoinModal').css('display', 'none');
   $('.checkModal').css('display', 'block');
   $('.joinDataInputModal').css('display', 'none');
+
+  // 로그인창 닫기
+  $('.loginModal').css('display', 'none');
 });
 
 //약관동의창 취소
