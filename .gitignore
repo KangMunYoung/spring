@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,eclipse,intellij,visualstudiocode,maven,gradle
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,eclipse,intellij,visualstudiocode,maven,gradle
 
+# node modules - eslint
+node_modules
 ### Eclipse ###
 .metadata
 bin/
