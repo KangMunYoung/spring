@@ -59,24 +59,57 @@ $('.modalOverlay').click(function () {
   $('.loginModal').css('display', 'none');
 });
 
-//약관동의창 취소
+//약관동의창 취소버튼 동작
 $('#joinCancelBtn').click(function () {
   $('.loginJoinModal').css('display', 'none');
 });
 
-//약관동의창 동의 -> 회원가입 입력창 오픈
+//약관동의창 동의 버튼 동작-> 회원가입 입력창 오픈
 $('#joinNextBtn').click(function () {
+  if($("input:checkbox[id=check1]").is(":checked") == false) {
+    //작업
+    alert('가입을 위해서 이용약관에 동의해 주셔야 합니다.');
+    return false;
+  }
+  if($("input:checkbox[id=check2]").is(":checked") == false) {
+    //작업
+    alert('가입을 위해서 개인정보 수집 및 이용에 동의해 주셔야 합니다.');
+    return false;
+  }
+  if($("input:checkbox[id=check5]").is(":checked") == false) {
+    //작업
+    alert('가입을 위해서 만 14세 미만은 가입이 불가합니다, 14세 이상임을 확인해주세요');
+    return false;
+  }
+  
   $('.checkModal').css('display', 'none');
   $('.joinDataInputModal').css('display', 'block');
 });
 
 //체크박스 전부 선택
-$('.allJoinCheckbox').ready(function () {
-  $('.allJoinCheckbox').click(function () {
-    $('.joinCheckbox').prop('checked', this.checked);
-  });
+
+$('.allJoinCheckbox').click(function () {
+  $('.joinCheckbox').prop('checked', this.checked);
 });
 
+
+//이메일
+function email_check( email ) {    
+  var regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+  return (email != '' && email != 'undefined' && regex.test(email)); 
+}
+
+$("input[type=email]").blur(function(){
+var email = $(this).val();
+if( email == '' || email == 'undefined') return;
+if(! email_check(email) ) {
+  $(".result-email").text('이메일 형식으로 적어주세요');
+  $(this).focus();
+  return false;
+}else {
+$(".result-email").text('');
+}
+});
 // 셀렉트박스 셋팅
 $(document).ready(function () {
   var now = new Date();

@@ -36,14 +36,14 @@ body {
   height: 80px;
   line-height: 80px;
   background-color: white;
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: "Nanum Pen Script", cursive;
   font-size: 2em;
 }
 .topMenu li:first-child {
   font-size: 4em;
   font-weight: 900;
   /* font-family: "바탕체"; */
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: "Nanum Pen Script", cursive;
 }
 .topMenu li:nth-child(n + 9) {
   font-size: 1.5em;
@@ -88,6 +88,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+.loginJoinModal::-webkit-scrollbar {
+  display: none;
 }
 
 /* 모달창 배경 */
@@ -95,7 +102,9 @@ body {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-  position: absolute;
+  top: 0;
+  overflow-y: auto;
+  position: fixed;
 }
 
 .joinModalContent {
@@ -107,6 +116,7 @@ body {
   text-align: center;
   border-radius: 10px;
   border: 2px solid #666;
+  overflow-y: auto;
 }
 
 .joinInputBox {
@@ -152,13 +162,20 @@ body {
   background-color: #fff;
 }
 /* 아이디, 비밀번호, 확인 인풋박스 */
-.joinDataInputModal input[type='text'],
-.joinDataInputModal input[type='password'],
-.joinDataInputModal input[type='email'] {
+.joinDataInputModal input[type="text"],
+.joinDataInputModal input[type="password"],
+.joinDataInputModal input[type="email"] {
   width: 390px;
   height: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   font-size: 12px;
+}
+
+.joinDataInputModal label {
+  text-align: left;
+  float: left;
+  width: 100%;
+  padding-left: 5px;
 }
 
 /* 아이디, 비밀번호, 확인 인풋박스 */
@@ -167,13 +184,6 @@ body {
 #joinUserpwdChk {
   margin: 0;
   height: 30px;
-}
-
-.joinDataInputModal label {
-  text-align: left;
-  float: left;
-  width: 100%;
-  padding-left: 5px;
 }
 
 /* 회원가입 정보입력창 ===*/
@@ -202,12 +212,12 @@ body {
   width: 32%;
   height: 25px;
 }
-/* 생일 셀렉트박스 ====*/
 
 .joinSubmitBtn {
   width: 100%;
   background-color: #0e3775;
   color: #fff;
+  margin-top: 15px;
 }
 
 /* 로그인 관련 스타일
@@ -239,7 +249,7 @@ body {
   width: 370px;
   line-height: 1.2;
 }
-.loginForm input[type='submit'] {
+.loginForm input[type="submit"] {
   width: 100%;
   padding: 10px;
 }
