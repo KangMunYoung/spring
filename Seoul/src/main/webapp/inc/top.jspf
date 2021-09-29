@@ -10,27 +10,49 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css_js/style.css?version=0"/>
+	<link rel="stylesheet" href="css_js/style.css?version=8"/>
+	
 	<link href="api/jquery.bxslider.css" rel="stylesheet" />
 	<script src="css_js/script.js"></script>
+	
 	<script src="api/jquery.bxslider.js"></script>
-
+<script>
+    $(()=>{
+		$("logFrm").submit(function(){
+			if($("#userid").val()==""){
+				alert("아이디를 입력하세요");
+				return false;
+			}
+			if($("#userpwd").val()==""){
+				alert("비밀번호를 입력하세요.");
+				return false;
+			}
+			return true;
+		});
+	});
+    </script>
 </head>
 <body>
 <div class="container">
 	<div class="loginBox">
-		<form action="loginOk" method="post">
-			<input type="text" name="userid" id="userid">
-			<input type="password" name="userpwd" id="userpwd">
-			<input type="submit" value="로그인">
+		<c:if test="${logStatus != 'Y' }">
+            <form method="post" action="<%=request.getContextPath()%>/loginOk" id="logFrm">
+                <input type="text" name="userid" id="userid" placeholder="아이디">
+                <input type="password" name="userpwd" id="userpwd" placeholder="비밀번호">
+                <input type="submit" value="로그인" id="loginBtn">
+            </c:if>
+            <c:if test="${logStatus == 'Y' }">
+				${logname}님 <a href="/seoul/logout">로그아웃</a>
+			</c:if>
 			<a href="#">회원가입</a>
 			<a href="#">고객센터</a>
 		</form>
+		
 	</div>
 	<div class="titleImg">
 	<a href="https://www.seoul.go.kr/main/index.jsp">
 		<img src="img/seoul.png" >
-		</a>
+	</a>
 	</div>
 	<ul id="menu">
 		<li><a href="#">나의서울</a></li>
@@ -59,3 +81,4 @@
 		</li>
 	</ul>
 </div>
+

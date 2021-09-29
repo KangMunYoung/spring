@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+body{
+	margin-top: 10px;
+}
 ul,
 li {
   margin: 0;
@@ -61,7 +63,70 @@ li {
   height: 50px;
   line-height: 50px;
 }
-#bottom {
-  height: 50px;
-  background-color: lightblue;
+
+.imgBox{
+	width: 800px;
+	margin:0 auto;
 }
+#bx {
+	
+	text-align: center;
+}
+
+#bx img {
+    width: 800px;
+    height: 400px;
+}
+
+#boardFrame{
+	margin:0 auto;
+	width: 800px;
+}
+
+
+#header{
+	 overflow: auto;
+	 width:800px; 
+	 margin: 0 auto;
+	 text-align: center;
+	 }
+#ck{
+	width:800px;
+	margin: 0 auto;
+}
+
+#board{ overflow: auto;}
+#board>li{
+	float: left; 
+	width: 10%; 
+	border-bottom: 1px solid #ddd; 
+	height: 40px;
+	
+	}
+#board>li:nth-child(6n+3){
+	width: 40%;
+	}
+#board>li:nth-child(6n+5){
+	width: 20%;
+	text-align: center;
+	}
+#board>li:nth-child(6n+6){
+	text-align: center;
+	}
+
+.pagination{
+	justify-content:center;
+}
+
+
+#bottom {
+  width:800px;
+  margin: 0 auto;
+  text-align:center;
+  line-height:50px;
+  height: 50px;
+  color: #FFF;
+  background-color: #456;
+}
+
+
