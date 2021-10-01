@@ -85,7 +85,8 @@ public class RegisterController {
 			session.setAttribute("logname", vo.getUsername());
 			session.setAttribute("logid", vo.getUserid());
 			session.setAttribute("logStatus", vo.getLogStatus());
-			mav.setViewName("redirect:/");
+//			mav.setViewName("redirect:/");
+			mav.setViewName("home");
 		}else {
 			mav.setViewName("redirect:login");
 		}

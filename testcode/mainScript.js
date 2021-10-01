@@ -41,6 +41,7 @@ $('#loginBtn').click(function () {
 
 // 회원가입 버튼 클릭
 $('#joinBtn').click(function () {
+  $('.loginJoinModal').load('joinModal.html')
   $('.loginJoinModal').css('display', 'block');
 
   /*  값 초기화  -> 체크박스, 텍스트박스, 셀렉트박스*/
