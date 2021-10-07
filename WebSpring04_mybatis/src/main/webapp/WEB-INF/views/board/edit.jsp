@@ -8,10 +8,10 @@
 </head>
 <body>
 <h1>글수정</h1>
-<form action="/myhome/editOk" method="post">
+<form method="post" action="/myhome/editOk" >
 	<input type="hidden" name="no" value="${vo.no }">
 	제목		:<input type="text" name="subject" value="${vo.subject }"><br/>
-	글내용	:<textarea name="content" cols="50">${vo.content}</textarea><br/>
+	글내용	:<textarea name="content" rows="10" cols="50">${vo.content}</textarea><br/>
 	<input type="submit" value="글수정">
 
 </form>

@@ -59,6 +59,7 @@ public class BoardController {
 			
 			mav.setViewName("redirect:list");
 		}else {
+			mav.addObject("msg", "등록");
 			mav.setViewName("board/writeResult");
 		}
 		return mav;
@@ -73,8 +74,58 @@ public class BoardController {
 		mav.setViewName("board/edit");
 		
 		return mav;
-		
-		
 	}
+	//글수정
+	@RequestMapping(value="/editOk", method=RequestMethod.POST)
+	public ModelAndView editOk(BoardVO vo, HttpSession session) {
+		vo.setUserid((String)session.getAttribute("userid"));
+
+		ModelAndView mav = new ModelAndView();
+		BoardDAOImp dao = sqlSession.getMapper(BoardDAOImp.class);
+		int cnt= dao.boardEditOk(vo);
+		mav.addObject("no", vo.getNo());
+		
+		if(cnt >0 ) {//수정이 되면 글내용보기
+			mav.setViewName("redirect:view");
+			
+		}else {//수정안되면 글수정으로 이동
+			mav.addObject("msg", "수정");
+			mav.setViewName("board/writeResult");
+		}
+		
+		return mav;
+	}
+	
+	//글삭제
+	@RequestMapping("/boardDel")
+	public ModelAndView boardDel(int no, HttpSession session) {
+		String userid = (String)session.getAttribute("userid");
+		BoardDAOImp dao = sqlSession.getMapper(BoardDAOImp.class);
+		int cnt = dao.boardDelete(no, userid);
+		
+		ModelAndView mav = new ModelAndView();
+		if(cnt>0) {//글이 삭제되면 list로
+			mav.setViewName("redirect:list");
+		}else {//글이 삭제안되면 글내용 보기로
+			mav.addObject("no",no);
+			mav.setViewName("redirect:view");
+		}
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

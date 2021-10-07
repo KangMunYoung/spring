@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 .topMenu li {
-  float: left;
+  /* float: left; */
   width: 10%;
   height: 80px;
   line-height: 80px;

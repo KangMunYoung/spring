@@ -16,5 +16,12 @@
 		insert into board(no, userid, subject, content, ip)
 		values(boardsq.nextval, #{userid}, #{subject}, #{content}, #{ip})
 	</insert>
+	<update id="boardEditOk" parameterType="com.bitcamp.myhome.board.BoardVO">
+		update board set subject=#{subject}, content=#{content}
+		where no=#{no} and userid=#{userid}
+	</update>
+	<delete id="boardDelete">
+		delete from board where no=#{param1} and userid=#{param2}
+	</delete>
 	
 </mapper>

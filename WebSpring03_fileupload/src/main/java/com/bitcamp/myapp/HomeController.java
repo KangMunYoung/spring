@@ -28,7 +28,8 @@ public class HomeController {
 		// vo -> userid, subject 
 		//업로드 위치
 //		String path = req.getSession().getServletContext().getRealPath("/upload");
-		String path = null;
+//		String path = "https://testksc7662.synology.me/img/";
+		String path = "https://125.176.148.228:5001/";
 		System.out.println(path);
 		//파일업로드를 위해서는 HttpServletRequest 객체를 이용하여 MultipartHttpServletRequest객체를 구하여야한다.
 		MultipartHttpServletRequest mr = (MultipartHttpServletRequest)req;

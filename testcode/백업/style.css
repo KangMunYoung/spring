@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+/*
+	스타일 주석
+	
+*/
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.mainHeader {
+  min-width: 1400px;
+}
+.mainHeader > ul {
+  overflow: auto;
+}
+
+.topMenu {
+  margin: auto;
+  background-color: blue;
+  text-align: center;
+}
+.topMenu li {
+  float: left;
+  width: 10%;
+  height: 80px;
+  line-height: 80px;
+  background-color: white;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 2em;
+}
+.topMenu li:first-child {
+  font-size: 4em;
+  font-weight: 900;
+  /* font-family: "바탕체"; */
+  font-family: "Nanum Pen Script", cursive;
+}
+.topMenu li:nth-child(n + 9) {
+  font-size: 1.5em;
+}
+
+.topMenu a:link,
+.topMenu a:visited,
+.topMenu a:active {
+  text-decoration: none;
+  color: black;
+}
+.topMenu a:hover {
+  color: rgba(131, 125, 125, 0.952);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  /* 높이를 지정하지 않도록 한다. */
+  padding: 20xp 0;
+  color: white;
+  background: blue;
+  text-align: center;
+}
+
+/* 회원가입 & 로그인 모달창 관련 */
+.asterisk {
+  color: red;
+  font-weight: bolder;
+}
+/*모달창*/
+.loginJoinModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+.loginJoinModal::-webkit-scrollbar {
+  display: none;
+}
+
+/* 모달창 배경 */
+.modalOverlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow-y: auto;
+  position: fixed;
+}
+
+.joinModalContent {
+  position: relative;
+  margin: 100px auto;
+  width: 400px;
+  padding: 20px;
+  background-color: #fafafa;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #666;
+  overflow-y: auto;
+}
+
+.joinInputBox {
+  text-align: left;
+  width: 100%;
+  padding: 10px 0;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.jointextarea {
+  height: 100px;
+  border: 1px solid #dfe0df;
+  border-radius: 5px;
+  overflow-y: auto;
+  background: #fff;
+  color: #000;
+}
+
+.jointextarea pre {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* 약관 취소,다음 버튼 스타일 */
+.btnBlock {
+  width: 49%;
+  height: 48px;
+  line-height: 46px;
+  padding: 0;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+}
+#joinNextBtn {
+  background-color: #0e3775;
+  color: #fff;
+}
+
+/* 회원가입 정보 입력 창 기본 설정 */
+.joinDataInputModal {
+  display: none;
+  background-color: #fff;
+}
+/* 아이디, 비밀번호, 확인 인풋박스 */
+.joinDataInputModal input[type="text"],
+.joinDataInputModal input[type="password"],
+.joinDataInputModal input[type="email"] {
+  width: 390px;
+  height: 25px;
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+.joinDataInputModal label {
+  text-align: left;
+  float: left;
+  width: 100%;
+  padding-left: 5px;
+}
+
+/* 아이디, 비밀번호, 확인 인풋박스 */
+#joinUserid,
+#joinUserpwd,
+#joinUserpwdChk {
+  margin: 0;
+  height: 30px;
+}
+
+/* 회원가입 정보입력창 ===*/
+.joinCautionText {
+  text-align: left;
+  border-left: 5px solid #2196f3;
+  background-color: #fafafa;
+  width: 378px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+/* 회원가입 주의사항 텍스트 */
+.joinCautionText p {
+  margin: 0;
+  padding: 5px 0;
+  color: #757575;
+}
+
+/* 생일 셀렉트박스 ====*/
+.selectBox {
+  padding-bottom: 10px;
+}
+
+.selectBox select {
+  width: 32%;
+  height: 25px;
+}
+
+.joinSubmitBtn {
+  width: 100%;
+  background-color: #0e3775;
+  color: #fff;
+  margin-top: 15px;
+}
+
+/* 로그인 관련 스타일
+ */
+.loginModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.loginForm {
+  position: relative;
+  margin: 100px auto;
+  width: 400px;
+  padding: 20px;
+  background-color: #fafafa;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #666;
+  overflow: auto;
+}
+.userid,
+.userpwd {
+  border: none;
+  box-shadow: none;
+  padding: 12px 16px;
+  width: 370px;
+  line-height: 1.2;
+}
+.loginForm input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+}
+.autoLoginLabel {
+  float: left;
+  padding: 10px 0;
+}
+
+.joinBtn2 {
+  float: left;
+}
+.findId {
+  float: right;
+}
+.autoLoginLabel {
+  overflow: auto;
+}
