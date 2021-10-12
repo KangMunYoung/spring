@@ -9,6 +9,17 @@ public class BoardVO {
 	private String writedate;
 	private String ip;
 	
+	//여러개의 레코드번호담을 변수
+	private int[] noDelArray;
+	
+	
+	public int[] getNoDelArray() {
+		return noDelArray;
+	}
+	public void setNoDelArray(int[] noDelArray) {
+		this.noDelArray = noDelArray;
+	}
+	
 	public int getNo() {
 		return no;
 	}

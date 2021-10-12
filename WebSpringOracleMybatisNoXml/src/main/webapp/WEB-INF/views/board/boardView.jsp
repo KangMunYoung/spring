@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function boardDel(){
+		if(confirm("삭제할까요?")){
+			location.href="/boardDel?no=${vo.no}";
+		}
+	}
+</script>
 </head>
 <body>
 <h1>글내용보기</h1>
@@ -14,8 +21,8 @@
 제목 : ${vo.subject },<br/>
 글내용 : ${vo.content },<br/>
 <hr/>
-수정
-삭제
+<a href="/myapp/boardEdit?no=${vo.no }">수정</a>
+<a href="javascript:boardDel()">삭제</a>
 
 
 </body>

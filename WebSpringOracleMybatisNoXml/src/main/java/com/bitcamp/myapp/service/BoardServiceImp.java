@@ -24,6 +24,28 @@ public class BoardServiceImp implements BoardService {
 	public BoardVO boardView(int no) {
 		return boardDAO.boardView(no);
 	}
+
+	@Override
+	public int boardInsert(BoardVO vo) {
+		return boardDAO.boardInsert(vo);
+	}
+
+	@Override
+	public int boardUpdate(BoardVO vo) {
+		return boardDAO.boardUpdate(vo);
+	}
+
+	@Override
+	public int boardDelete(int no, String userid) {
+		// TODO Auto-generated method stub
+		return boardDAO.boardDelete(no, userid);
+	}
+
+	@Override
+	public int boardDelArray(int[] noDelArray) {
+		// TODO Auto-generated method stub
+		return boardDAO.boardDelArray(noDelArray);
+	}
 	
 	
 	
