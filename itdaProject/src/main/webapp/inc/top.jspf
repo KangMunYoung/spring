@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" type="text/css" href="mainStyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/mainStyle.css?a" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script defer type="text/javascript" src="mainScript.js"></script>
+    <script defer type="text/javascript" src="js/mainScript.js"></script>
   </head>
 
   <body>
@@ -18,7 +18,9 @@
       <!-- header and navigation-->
       <header class="mainHeader">
         <ul class="topMenu">
-          <li><a href="#">잇다</a></li>
+          <li>
+            <img src="/img/itdaLogo.png" alt="" onclick="location.href='#'" />
+          </li>
           <li><a href="#">추천게시판</a></li>
           <li><a href="#">매칭게시판</a></li>
           <li><a href="#">장터</a></li>
@@ -26,13 +28,18 @@
           <li><a href="#">Q&A</a></li>
           <li><a href="#">베스트</a></li>
           <li><a href="#">인증</a></li>
-          <!-- <c:if test="${logStatus != 'Y' }"> -->
-          <li><a href="#" class="loginBtn" id="loginBtn">로그인 </a></li>
-          <li><a href="#" class="joinBtn" id="joinBtn">회원가입</a></li>
-          <!-- </c:if> -->
-          <!-- <c:if test="${logStatus == 'Y' }">
+        </ul>
+        <div class="topMenu_r">
+          <div class="loginBtnBox">
+            <a href="#" class="loginBtn" id="loginBtn">로그인 </a>
+            <a href="#" class="joinBtn" id="joinBtn">회원가입</a>
+          </div>
+        </div>
+
+        <!-- <c:if test="${logStatus != 'Y' }"> -->
+        <!-- </c:if> -->
+        <!-- <c:if test="${logStatus == 'Y' }">
               <li><a href="#">${logName}님 </a></li>
               <li><a href="#"> 로그아웃</a></li>
             </c:if> -->
-        </ul>
       </header>
