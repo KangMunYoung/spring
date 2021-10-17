@@ -94,16 +94,16 @@ public class BoardController {
 		return mav;
 	}
 	
-	//여러레코드를 배열로 삭제하기
-	@RequestMapping(value="/arrayBoardDel" , method=RequestMethod.POST)
-	public ModelAndView arrayBoardDel(BoardVO vo) {
-		ModelAndView mav = new ModelAndView();
-		int result = boardService.boardDelArray(vo.getNoDelArray());
-		System.out.println("삭제된 레코드 수 :"+result);
-		mav.setViewName("redirect:list");
-	}
-	
-	
+//	//여러레코드를 배열로 삭제하기
+//	@RequestMapping(value="/arrayBoardDel" , method=RequestMethod.POST)
+//	public ModelAndView arrayBoardDel(BoardVO vo) {
+//		ModelAndView mav = new ModelAndView();
+//		int result = boardService.boardDelArray(vo.getNoDelArray());
+//		System.out.println("삭제된 레코드 수 :"+result);
+//		mav.setViewName("redirect:list");
+//	}
+//	
+//	
 	
 	
 	

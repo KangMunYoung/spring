@@ -44,8 +44,13 @@ public class BoardServiceImp implements BoardService {
 	@Override
 	public int boardDelArray(int[] noDelArray) {
 		// TODO Auto-generated method stub
-		return boardDAO.boardDelArray(noDelArray);
+		return 0;
 	}
+
+	/*
+	 * @Override public int boardDelArray(int[] noDelArray) { // TODO Auto-generated
+	 * method stub return boardDAO.boardDelArray(noDelArray); }
+	 */
 	
 	
 	

@@ -26,14 +26,14 @@ public interface BoardDAO {
 	@Delete("delete from board where no=#{param1} and userid=#{param2}")
 	public int boardDelete(int no, String userid);
 	
-	//배열을 이용한 여러개이 레코드 한번에 삭제
-	@Delete({
-		"<script>",
-		" delete from board where no in",
-		" <foreach item=\"item\"collection=\"array\" open=\"(\" separator=\",\" close=\")\">",
-		" #{item} ",
-		" </foreach>",
-		" </script>"
-		})
-	public int boardDelArray(int[] noDelArray);
+//	//배열을 이용한 여러개이 레코드 한번에 삭제
+//	@Delete({
+//		"<script>",
+//		" delete from board where no in",
+//		" <foreach item=\"item\"collection=\"array\" open=\"(\" separator=\",\" close=\")\">",
+//		" #{item} ",
+//		" </foreach>",
+//		" </script>"
+//		})
+//	public int boardDelArray(int[] noDelArray);
 }
