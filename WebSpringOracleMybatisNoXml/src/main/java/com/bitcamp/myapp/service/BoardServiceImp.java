@@ -16,7 +16,6 @@ public class BoardServiceImp implements BoardService {
 
 	@Override
 	public List<BoardVO> boardList() {
-		// TODO Auto-generated method stub
 		return boardDAO.boardList();
 	}
 
